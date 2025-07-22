@@ -3,10 +3,11 @@ pragma solidity ^0.8.24;
 
 import {AggregatorV3Interface} from "../lib/foundry-chainlink-toolkit/src/interfaces/feeds/AggregatorV3Interface.sol";
 
-error InvalidFeedAddress();
 
 contract GoldPriceFeed {
     AggregatorV3Interface internal immutable priceFeed;
+
+    error InvalidFeedAddress();
 
     constructor(address _feedAddress) {
         if (_feedAddress == address(0)) {
